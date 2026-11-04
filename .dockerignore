@@ -1,0 +1,11 @@
+# Not part of the published site
+.git
+.gitignore
+.dockerignore
+.claude
+tools
+Dockerfile
+README.md
+**/__pycache__
+**/Thumbs.db
+**/.DS_Store

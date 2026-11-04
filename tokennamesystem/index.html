@@ -1,0 +1,124 @@
+<!doctype html>
+<!--
+       /     /\      /\      /\
+      /     /  \    /  \    /  \
+     /     /    \  /    \  /    \
+    /     /      \/      \/      \
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A short introduction to the TNS - Token Name System · Misch Strotz</title>
+  <meta name="description" content="What good is AGI if it doesn&#x27;t know everything? Not much.">
+  <link rel="canonical" href="https://www.mitchoz.com/tokennamesystem/">
+  <link rel="icon" href="../favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <meta name="theme-color" content="#000000">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Misch Strotz">
+  <meta property="og:title" content="A short introduction to the TNS - Token Name System">
+  <meta property="og:description" content="What good is AGI if it doesn&#x27;t know everything? Not much.">
+  <meta property="og:url" content="https://www.mitchoz.com/tokennamesystem/">
+  <meta property="og:image" content="https://www.mitchoz.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="The Misch Strotz logo on black">
+  <meta property="article:published_time" content="2025-01-16">
+  <meta property="article:author" content="Misch Strotz">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@mitch0z">
+  <meta name="twitter:creator" content="@mitch0z">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <script>
+    // Hold the text back for a moment so app.js can scramble it in; skipped with reduced motion, never longer than 2 s.
+    if (!matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      document.documentElement.classList.add("scramble-wait");
+      setTimeout(() => document.documentElement.classList.remove("scramble-wait"), 2000);
+    }
+  </script>
+  <base target="_blank">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "A short introduction to the TNS - Token Name System", "description": "What good is AGI if it doesn't know everything? Not much.", "datePublished": "2025-01-16", "image": "https://www.mitchoz.com/assets/img/textfiles/TNS.webp", "url": "https://www.mitchoz.com/tokennamesystem", "author": {"@type": "Person", "name": "Misch Strotz", "url": "https://www.mitchoz.com"}}</script>
+</head>
+<body>
+  <main class="essay">
+    <nav class="crumb"><a target="_blank" rel="noopener" href="../">Misch Strotz</a></nav>
+    <header>
+      <h1>A short introduction to the TNS - Token Name System</h1>
+      <p class="dek">What good is AGI if it doesn&#x27;t know everything? Not much.</p>
+      <p class="meta"><time datetime="2025-01-16">2025-01-16</time></p>
+    </header>
+    <figure class="cover"><img src="../assets/img/textfiles/TNS.webp" alt=""></figure>
+    <article>
+      <p>Today's AI systems have a problem: They just don't know very much.</p>
+      <p>Sure, they can help you to code, tell you about historical figures, make videos of dogs on skateboards or generate silly songs.</p>
+      <p>But as soon as you start asking for your best friend's birthday or to hear your mother's voice, the fun stops.</p>
+      <p>They're just not very good with niche, unscrapable data. They're also not very good with respecting the rights of the things they're trained on.</p>
+      <p>When we drafted the first business plan for <a target="_blank" rel="noopener" href="https://www.letz.ai?utm_source=mitchoz.com">LetzAI</a> in 2023, we wanted to solve that and defined 2 focus areas:</p>
+      <p>As we were developing our first MVP, a few ideas came up. We ended up grouping them under a concept that we called "Token Name System," or TNS for short.</p>
+      <p>Recently I read <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2501.06243?utm_source=mitchoz.com">this paper about ATCP/IP (an AI TCP/IP protocol) by Andrea Muttoni and Jason Zhao</a>, and it reminded me that I had never publicly shared any of the ideas around TNS before.</p>
+      <p class="key">So here’s a short intro on TNS, the Token Name System.<br>An AI Protocol Layer similar to the Domain Name System DNS.</p>
+      <h2 id="what-is-a-token">What is a “Token”?</h2>
+      <p>In the real world, two people or objects can have the same name. A person in the US may be born with the same name than a person in Germany. If you ask an AI to generate an image of “John Smith,” then there is a very high chance that the result will not be what you expected. The result will also vary from one AI to another.</p>
+      <p>There are trillions of unique objects in the world and gazillions in the entire universe. Your own name, the name of your dog, your favorite dress, or digital things like your Instagram username are just a few examples. The sum of all names and their meaning is more than any modern AI system could ever access by scraping the internet alone. However, a perfect AI would need to do just that: be able to address every non-fungible object by a unique name—its Token.</p>
+      <p>TNS aims to solve this problem.</p>
+      <p>To clarify: TNS Tokens have nothing to do with crypto tokens or blockchain. In TNS, a Token is simply a unique word or string that acts as an instruction for generative AI systems.</p>
+      <p>When referenced within the TNS protocol, Tokens enable generativ AI tools to retrieve specific information associated with them, while respecting IP and privacy rights of the legal entity or individual that own them.</p>
+      <p>They are human-readable identifiers passed as part of text prompts to AI systems. Unlike the embedded tokens in large-scale language models (LLMs) such as GPT or T5-XXL—which are numerical representations pre-baked into the model’s parameters—our Tokens exist outside the pre-trained model. They are stored as unique identifiers in a global distributed database to which anybody can add their own Tokens.</p>
+      <p>Each Token’s main purpose is to store specific fine-tuned weights and to allow for seamless integration with additional privacy and safety options, ensuring that information tied to a Token can only be accessed and used according to the rights and preferences of its owner.</p>
+      <p>In TNS, LetzAI (or any other platform that allows fine-tuning of AI models, e.g. OpenAI), could act as registrars: These providers register unique names (the Tokens) for their users and link weights to Tokens. The Token itself can be an abstract number, like a UUID, but its main purpose is to serve as a human-readable text string, like a web domain inside of a text prompt.</p>
+      <h2 id="training-models-as-encryption">Training Models as Encryption</h2>
+      <p>When you train model weights using your data and link those weights to a unique Token, you’re essentially performing a form of encryption.</p>
+      <figure><img src="../assets/img/textfiles/tns-registration.png" alt="TNS UML Diagram" loading="lazy"></figure>
+      <p>On TNS: The resulting model (or its weights) are public and can be accessed by AI systems during inference. Your original data stays private and exclusively accessible to you and, in the case of training, the registrar of your choice. During inference, the AI system downloads only the public model weights associated with the Token. The private data—whether it’s a single image, a voice snippet, an MP3 file, or a collection of Tokens—remains entirely secure and inaccessible. The underlying secret “data” can be present in different modalities. To ensure clarity and compatibility among text, audio, image, video, DNA, etc., a modality identifier is required for each Token. You can think of this like A Records in the Domain Name System, which map domain names to IP addresses. Here, modality identifiers help categorize and manage different types of data linked to Tokens.</p>
+      <p>Diagram for token registration</p>
+      <p>Of course, it is possible to imagine a version of TNS that doesn't rely on training at all. For example to reproduce an accurate image of a person, many modern system no longer require training methods, but simply take a photo input. It is also imaginable to have simpler database-style text entries.</p>
+      <p>I consider these as unencrypted options.</p>
+      <h2 id="registrars-as-trust-anchors">Registrars as Trust Anchors</h2>
+      <p>In the TNS framework, Token registrars would play a crucial role:</p>
+      <p>Today, LetzAI can be thought of as the first and only registrar operating within its own TNS subgraph. Each platform that trains AI models can function as its own registrar, maintaining its own subgraph and storing its own weights. Over time, this could scale to include millions of registrars, each managing their portion of the TNS ecosystem.</p>
+      <p>It is worth noting as well that besides LetzAI, large players have recognized the opportunity too: For example, in May 2024, OpenAI released a blog article titled “Our Approach to Data and AI,” where they introduced a tool called “Media Manager,” a tool that lets brands manage how they’re represented in OpenAI’s closed system.</p>
+      <p>An actor in the TNS system can act as registrar which registers token on the Token Database (and trains models), and/or as an inference entity, that accesses the models directly on the database.</p>
+      <h2 id="the-first-prototype">The First Prototype</h2>
+      <p>When we drafted the prototype of LetzAI in 2023, we implemented one of the first Token Tagging systems:</p>
+      <p>Using the @ character in a prompt, users can trigger the unique Token of their model and add their fine-tuned information on the fly.</p>
+      <figure><img src="../assets/img/textfiles/tns-uml.png" alt="TNS UML Diagram" loading="lazy"><figcaption>A simple diagram of inference flow</figcaption></figure>
+      <p>This idea has since been adopted by many platforms and systems. For instance, RAG integrations use similar mechanisms to retrieve fine-tuned or external data, or ChatGPT’s Custom GPTs also allow users to tag GPTs using @.</p>
+      <p>However, these Tagging systems most often only function in their own closed ecosystem. In the Token Name System, however, every player works inside the same protocol and uses the global token database, similar to how DNS works.</p>
+      <p>To register new tokens, the registrar needs to check with the database for availability, and if a token is free, it gets registered.</p>
+      <p>As that network becomes crowded, rare Tokens are acquired in the same way as domains. They’re created (or sold) first come, first serve. They can be traded, and a sale or transfer can be enforced by IP law.</p>
+      <p>On the registrar level, this creates a marketplace for Tokens.</p>
+      <p>A key difference between Tokens and Domains (especially in the IP segment), is that Tokens are stronger correlated to the physical world. What I mean by this is that a Token can directly link to a physical item, like a person. Said person needs to be able to make sure that their model performs well and the added data is genuine. A website in the DNS system in comparison is much more abstract and "optional". An AI Model of a person should in most cases not be abstract and artsy, but authentic. A ruleset for registrars is necessary that prevents abuse in the form of misleading model names for example.</p>
+      <p>An example of such rules can be found in our <a target="_blank" rel="noopener" href="https://letz.ai"></a>LetzAI Terms of Service.</p>
+      <h2 id="two-main-challenges">Two Main Challenges</h2>
+      <p>To bootstrap a larger open initiative, more registrars and trusted authorities must come together to store and serve models in a secure and reliable way that respects intellectual property (IP) rights.</p>
+      <p>Two main challenges exist:</p>
+      <p>A third more abstract challenge is the question about Token popularity. If billions of Tokens exist, humans will need ways to monitor which ones are the "good" ones. For this purpose either a social solution or a "Google-like" index solution are required.</p>
+      <p>A notable example of a platform grappling with these issues is <a target="_blank" rel="noopener" href="https://civit.ai?utm_source=mitchoz.com">Civitai</a>, a large, creative, but unregulated network. While it’s a haven for innovation, it has also become an IP and safety minefield. To address this, Civitai launched a second, more curated platform, Civitai Green, in what could be seen as an act of self-castration.</p>
+      <p>Civitai has also developed its own internal "TNS system" called AIR (Artificial Intelligence Resource), which assigns a unique URI (Unique Resource Identifier) to every uploaded model. This approach is promising. However, the hard-to-read AIR format feels closer to an “IP address” than a human-readable domain, which could limit its accessibility to non-technical users.</p>
+      <p>In TNS, every AIR URI would need a simpler, human-readable domain: the Token. This would allow both systems to coexist, combining AIR's functionality with TNS's user-friendly naming structure.</p>
+      <h2 id="blockchain-s-role-is-limited">Blockchain’s Role is Limited</h2>
+      <p>The above challenges, in my view, cannot be effectively solved using a censorship-resistant blockchain where transactions are irreversible, and ownership cannot be corrected. This makes blockchain poorly suited for managing IP in dynamic, legal contexts.</p>
+      <p>However, blockchain and crypto can play a useful role as payment methods for commercial license sales directly over the protocol. The already mentioned ATCP/IP paper introduces interesting mechanics for such use cases, which could complement TNS without making blockchain central to the solution.</p>
+      <h2 id="next-steps">Next Steps</h2>
+      <p>A true global Token Name System (TNS) should be built as an open-source protocol, collaboratively maintained by contributors and trusted legal entities. We’ve done something similar before with the internet—creating shared, universal standards. It’s time to consider how we can do it again for AI.</p>
+      <p>As inspiration for such an effort, here’s an example of the key components a TNS-like system should support:</p>
+      <p>As a final note: one may think that a TNS-like protocol would limit creative expression or that it would be an effort to control the freedom of AI systems. That assumption is wrong.</p>
+      <p>The goal of TNS is to empower creators by providing a secure way to add niche, non-scrapable information to AI systems—data that otherwise would not be available for training. Importantly, this protocol enables monetization through royalties and commercial licensing, creating many new opportunities rather than closing doors. Alternative closed systems may exist alongside TNS.</p>
+      <h2 id="why-now">Why Now?</h2>
+      <p>The internet succeeded because it was built on shared standards from the beginning. DNS thrived because it was adopted early, during the internet’s foundational stages.</p>
+      <p>AI instead is already fragmented, dominated by many closed ecosystems that prioritize proprietary control over interoperability.</p>
+      <p>Convincing these players to adopt a shared protocol is a monumental challenge.<br>So we better get to work.</p>
+    </article>
+    <p class="support">If you liked this article, you can <a target="_blank" rel="noopener" href="https://buymeacoffee.com/mitch0z">buy me a coffee</a> or <a target="_blank" rel="noopener" href="https://x.com/mitch0z">follow me on X</a>.</p>
+    <footer><a target="_blank" rel="noopener" href="../">Misch Strotz</a> · © 2026</footer>
+  </main>
+
+  <div class="preview" id="preview" hidden></div>
+  <script src="../app.js"></script>
+</body>
+</html>

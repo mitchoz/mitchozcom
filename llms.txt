@@ -1,0 +1,17 @@
+﻿# Misch Strotz
+
+> Co-founder & CEO at letz.ai and neon internet. CTO at habiata. Vice-President at PULSE, the Luxembourg Startup Association. Enabling AI for creative professionals. Writing about tech trends I consider relevant.
+
+Personal site with essays, talks, press, tweets, coined terms and projects.
+
+## Profile
+
+- [Misch Strotz (Markdown)](https://www.mitchoz.com/misch-strotz.md): everything on the site in one file
+
+## Essays
+
+- [Why we love what we create](https://www.mitchoz.com/whywelovewhatwecreate/): Meditations on AI Characters and the new Identity Economy. Introducing the Mirror Rejection Effect.
+- [Reflections on Jobs&AI](https://www.mitchoz.com/jobsandai/): The future of work won't look like work. And that's the point.
+- [TNS – Token Name System](https://www.mitchoz.com/tokennamesystem/): An AI protocol layer for controlling intellectual property and AI models.
+- [Introducing: letz.ai](https://www.mitchoz.com/letzai/): A generative AI system to which you can add yourself, your products, and your style.
+- [Infinite Information Loops](https://www.mitchoz.com/infiniteinformationloops/): A man-made technological trap that stresses the boundaries of our realities. Introduces the A priori fake, the Synthographic Object and the Infinite Information Loop.
