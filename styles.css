@@ -47,7 +47,10 @@
 * { box-sizing: border-box; }
 /* Until app.js has scrambled the text (see the snippet in each page's head) */
 .scramble-wait main { visibility: hidden; }
-html { -webkit-text-size-adjust: 100%; }
+/* Nothing may make the page wider than the screen: a phone that sees wider content at load opens zoomed out. */
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; overflow-x: clip; }
+/* Long links and words (e.g. a bare URL in a post) wrap instead of pushing the page wider. */
+main { overflow-wrap: anywhere; }
 body {
   margin: 0;
   background: var(--bg);
@@ -80,7 +83,7 @@ p { margin: 0; }
 
 /* Lists of dated entries */
 .entries { list-style: none; margin: 0; padding: 0; }
-.entries li { display: grid; grid-template-columns: 6.5rem 1fr; gap: 0 16px; padding: 7px 0; }
+.entries li { display: grid; grid-template-columns: 6.5rem minmax(0, 1fr); gap: 0 16px; padding: 7px 0; }
 .entries time, .meta {
   color: var(--muted); font-size: .8rem; font-variant-numeric: tabular-nums; padding-top: .3em;
 }
@@ -152,12 +155,12 @@ footer a { color: inherit; }
 .essay article p:target { background: var(--mark); box-shadow: 0 0 0 8px var(--mark); }
 
 /* Press kit teaser at the end of the homepage: photo in the date column */
-.press-kit { display: grid; grid-template-columns: 6.5rem 1fr; gap: 0 16px; align-items: start; }
+.press-kit { display: grid; grid-template-columns: 6.5rem minmax(0, 1fr); gap: 0 16px; align-items: start; }
 .press-kit img { display: block; width: 100%; height: auto; background: var(--rule); }
 .press-kit p { color: var(--muted); font-size: .9rem; line-height: 1.45; margin-top: 2px; }
 .press-kit p a { color: inherit; }
 @media (max-width: 520px) {
-  .press-kit { grid-template-columns: 5rem 1fr; }
+  .press-kit { grid-template-columns: 5rem minmax(0, 1fr); }
 }
 
 /* 404 */
@@ -210,9 +213,19 @@ footer a { color: inherit; }
   .thumb { width: 220px; }
 }
 
+/* Phones: a size up for reading, roomier rows that are easier to tap, smaller gaps between sections. */
 @media (max-width: 520px) {
-  body { font-size: 17px; }
-  main { padding-top: 32px; }
-  .entries li { grid-template-columns: 1fr; }
-  .entries time { padding-top: 0; }
+  body { font-size: 18px; line-height: 1.6; }
+  main { padding: 28px 20px 48px; }
+  h1 { font-size: 1.55rem; }
+  h2 { font-size: 1.2rem; margin: 44px 0 10px; }
+  .entries li { grid-template-columns: minmax(0, 1fr); padding: 10px 0; }
+  .entries time, .meta { font-size: .85rem; padding-top: 0; }
+  .entries p, .press-kit p { font-size: .95rem; line-height: 1.5; }
+  .story-posts a { font-size: 1rem; }
+  .support { margin-top: 44px; font-size: .95rem; }
+  footer { font-size: .85rem; }
+  .essay header h1 { font-size: 1.75rem; margin-top: 24px; }
+  .essay .dek { font-size: 1.1rem; }
+  .essay figcaption { font-size: .85rem; }
 }
