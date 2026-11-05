@@ -29,6 +29,12 @@
   };
   const num = new Intl.NumberFormat("en-US");
   const isoDay = (iso) => iso.slice(0, 10);
+  // "01 JUN 2025": the same in the US and Europe (tools/format_dates.py does this for the static pages).
+  const MONTHS = "JAN FEB MAR APR MAY JUN JUL AUG SEP OCT NOV DEC".split(" ");
+  const dayLabel = (iso) => {
+    const [y, m, d] = isoDay(iso).split("-");
+    return `${d} ${MONTHS[Number(m) - 1]} ${y}`;
+  };
   // pbs.twimg.com serves resized variants via ?name=
   const small = (src) => (src.includes("/media/") ? `${src}?name=small` : src);
   const oneLine = (s) => s.replace(/\s*\n+\s*/g, " ");
@@ -113,7 +119,7 @@
     const [start, ...followUps] = story.posts;
     const urls = new Set(story.posts.map((p) => p.url));
     return el("li", { class: "story", "data-thumb": thumbOf(start) }, [
-      el("time", { datetime: start.date, text: isoDay(start.date) }),
+      el("time", { datetime: isoDay(start.date), text: dayLabel(start.date) }),
       el("div", {}, [
         postLink(start),
         quoteLine(start, urls),
@@ -123,7 +129,7 @@
               el("li", { "data-thumb": thumbOf(p) }, [
                 postLink(p),
                 quoteLine(p, urls),
-                el("p", {}, [el("time", { datetime: p.date, text: isoDay(p.date) }), ` · ${stats(p)}`]),
+                el("p", {}, [el("time", { datetime: isoDay(p.date), text: dayLabel(p.date) }), ` · ${stats(p)}`]),
               ])))
           : null,
       ]),
@@ -158,7 +164,7 @@
       scrambleIn(notesRoot, { duration: 700, sweep: 250 });
     } catch (e) {
       clearInterval(flicker);
-      notesRoot.replaceWith(el("p", { class: "meta", text: "Tweets could not be loaded." }));
+      notesRoot.replaceWith(el("p", { class: "meta", text: "The lore could not be loaded." }));
     }
   }
 

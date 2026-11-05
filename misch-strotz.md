@@ -3,9 +3,10 @@
 > Co-founder & CEO at letz.ai and neon internet. CTO at habiata. Vice-President at PULSE, the Luxembourg Startup Association. Enabling AI for creative professionals. Writing about tech trends I consider relevant.
 
 Website: https://www.mitchoz.com/  
+Press kit (photos, logo, bio): https://www.mitchoz.com/press/  
 Elsewhere: [GitHub](https://github.com/mitchoz) · [X](https://twitter.com/mitch0z) · [LinkedIn](https://www.linkedin.com/in/mitchoz/) · [Instagram](https://instagram.com/mitchoz) · [Facebook](https://www.facebook.com/mitchoz) · [misch@msh.lu](mailto:misch@msh.lu)
 
-_This file mirrors https://www.mitchoz.com/ for AI agents and other readers. Updated 2026-11-04._
+_This file mirrors https://www.mitchoz.com/ for AI agents and other readers. Updated 2026-11-05._
 
 ## Writing
 
@@ -16,26 +17,27 @@ _This file mirrors https://www.mitchoz.com/ for AI agents and other readers. Upd
 - 2023-01-06 · [Infinite Information Loops](https://www.mitchoz.com/infiniteinformationloops/): A man-made technological trap that stresses the boundaries of our realities. Introduces the A priori fake, the Synthographic Object and the Infinite Information Loop.
 - Medium · [Stories of the future](https://mitchoz.medium.com/stories-of-the-future-d442c1dc7c9): “How AI will kill the video star.”
 
-## Talks & podcasts
+## Talks & Podcast Selection
 
 - 2026-10-28 · [Small Pond Big Fish, Ep. 02](https://www.youtube.com/watch?v=8pjqCe5MMnE): Podcast with Panos (deelan.ai) and Mika (PULSE). Video games, the campaigns that went viral, the projects that didn't work, the death threats, and what it really takes to bootstrap in an AI gold rush.
 - 2026-07 · [How AI is changing the creative industries](https://www.youtube.com/watch?v=ElxOqEj51Ko): Gcore Connect 2026. The future of work won't look like work. And that's the point.
 - 2025-11-15 · [Artificial Intelligence in Contemporary Art](https://www.youtube.com/watch?v=hoCrGjhRggg): Round table at Spektrum, Rumelange, moderated by Avanti Sharma, with Miikka Heinonen, Bodo Korsig, Steve Gerges and Yliana Paolini.
+- 2025-02 · [Jung von Matt AI Brand Day](https://www.facebook.com/watch/?v=534367072958134): Jung von Matt Neckar. The trends that will define the next era of AI image creation, and personalisation at scale.
 - 2024-11-10 · [Gëlle Fro, Ep. 87](https://www.instagram.com/p/DCM8f8tqeTG/): Podcast, in Luxembourgish. Tech-Zukunft zu Lëtzebuerg: Misch Strotz iwwer Innovatioun an Erausfuerderungen.
-- 2024-10-22 · [L’utilisation de l’IA dans les contenus journalistiques](https://mediareform.public.lu/dam-assets/programme/3-conference/mediareform-programme-3.png): Mediareform #3, Casino Luxembourg. Round table with Patrick Swanson and Misch Pautsch, moderated by Dr. Stéphanie Lukasik, hosted by the Government of Luxembourg and the University of Luxembourg.
-- 2023-11-10 · [Art and New Technologies](https://luxembourgartweek.lu/en/programme/art-and-new-technologies): Luxembourg Art Week. Art talk with Jonas Lund, Serge Ecker, Lynn Klemmer and Eric Mangen, in collaboration with POST Luxembourg and letz.ai.
 - 2023-04-26 · [Startup Corner 27](https://www.cc.lu/toute-linformation/actualites/detail/startup-corner-27-misch-strotz-neon-internet): House of Startups podcast, in Luxembourgish. From an “A Priori Fake” internet to infinite loops of information that lose all economic value.
 - 2023 · [Rethinking Truth in the Age of Synthography](https://www.youtube.com/watch?v=e2h3Wnyvznk): TEDxLuxembourgCitySalon. “We shape our tools, and thereafter our tools shape us.”
 
-## Press
+## Press Selection
 
-- 2026-05-08 · [Luxembourg’s First AI Fashion Campaign: How It Was Made](https://www.siliconluxembourg.lu/luxembourg-first-ai-fashion-campaign-engelhorn-letzai/): Silicon Luxembourg. The technology behind the Engelhorn Luxembourg launch campaign.
+- 2026-06-11 · [Habiata: The System Behind Real Estate Agency Success](https://www.forbes.lu/habiata-the-system-behind-real-estate-agency-success/): Forbes Luxembourg. How habiata uses AI to manage real estate listings and client leads, with Felix Hemmerling and Torge Schwandt.
+- 2026-05-22 · [Fashion’s AI Revolution Starts In Luxembourg](https://www.siliconluxembourg.lu/fashion-ai-revolution-starts-in-luxembourg/): Silicon Luxembourg. A fully AI-generated campaign for Engelhorn’s launch at GRIDX.
+  - 2026-05-08 · [Luxembourg’s First AI Fashion Campaign: How It Was Made](https://www.siliconluxembourg.lu/luxembourg-first-ai-fashion-campaign-engelhorn-letzai/): Silicon Luxembourg. The technology behind the campaign.
+  - 2026-10-19 · [The campaign on Instagram](https://www.instagram.com/reels/DerG0c0IMt_/): Instagram reel.
 - 2025-11-24 · [AI for all: Luxembourg makes its educational revolution](https://en.paperjam.lu/article/ai-for-all-luxembourg-makes-its-educational-revolution): Paperjam. The launch of KI Léierbud, a free platform for learning about AI.
 - 2025-10-06 · [Tech & IA: les valeurs avant les outils](https://paperjam.lu/article/tech-and-ia-les-valeurs-avant-les-outils): Paperjam. A cross-generational round table on technology and AI in Luxembourg.
 - 2025 · [LetzAI case study](https://cloud.google.com/customers/letzai): Google Cloud. How LetzAI simplified its product and grew with viral campaigns like the Grand Duke selfies.
-- 2025-02-05 · [Misch Strotz: The Day I Thought My Professional Life Was Over](https://www.siliconluxembourg.lu/misch-strotz-the-day-i-thought-my-professional-life-was-over/): Silicon Luxembourg. From social media to AI, and the DALL·E 2 moment.
 - 2025-01 · [LetzAI rapidly scales AI-powered image generation for global users](https://gcore.com/case-studies/letzai): Gcore case study. Scaling with GPU Cloud and Everywhere Inference.
-- 2024-12-08 · [LetzAI repousse les limites de l’IA](https://www.forbes.lu/letzai-repousse-les-limites-intelligence-artificielle/): Forbes Luxembourg cover story, with Karim Youssef: “the rockstars of AI in Luxembourg.”
+- 2024-12-08 · [Misch Strotz & Karim Youssef - AI-generated Forbes Cover 2024](https://www.forbes.lu/letzai-repousse-les-limites-intelligence-artificielle/): Forbes Luxembourg cover story, with Karim Youssef: “the rockstars of AI in Luxembourg.”
 - 2024-10-07 · [Das Startup Letz.AI will auf seiner Plattform KI, Marken und UGC zusammenbringen](https://omr.com/de/daily/letz-ai-virtual-try-on): OMR. Generative AI, brands and user-generated content, and why it takes brave first movers.
 - 2024-10-04 · [Misch Strotz: “We’ve found a good balance between being playful and professional”](https://en.paperjam.lu/article/misch-strotz-we-ve-found-a-goo): Paperjam #NextGen: 100 Luxembourgers under 40.
 - 2024-08-22 · [LetzAI will die Werbebranche revolutionieren](https://www.wort.lu/wirtschaft/letzai-will-die-werbebranche-revolutionieren/17912342.html): Luxemburger Wort. Grand Duke Henri as a superhero, or fashion shows in places that don’t exist.
@@ -47,18 +49,19 @@ _This file mirrors https://www.mitchoz.com/ for AI agents and other readers. Upd
 - 2023-06-03 · [»Das wird Aneignungskunst auf Steroiden«](https://page-online.de/branche-karriere/das-wird-aneignungskunst-auf-steroiden/): PAGE. Interview with Misch Strotz and Sebastian Zimmerhackl on creating with AI.
 - 2022-12-21 · [Intelligence unleashed](https://journal.lu/de/intelligence-unleashed): Lëtzebuerger Journal. Three heavy AI users, with Julie Wieland and Sebastian Zimmerhackl, on their hopes and worries.
 - 2022-06-07 · [De mini-entreprises à grands entrepreneurs](https://paperjam.lu/article/mini-entreprises-a-grands-entr): Paperjam. From a school mini-company to founding L-Pod and neon internet.
+- 2022-05-20 · [Prix de l’Innovation 2022: Neon Internet récompensée pour sa boîte à outils marketing Neontools](https://www.adada.lu/2022/05/prix-de-linnovation-2022-neon-internet-recompensee-pour-sa-boite-a-outils-marketing-neontools/): adada. neontools, the marketing toolbox for creators and entrepreneurs, wins at the Chambre des Métiers’ innovation awards.
+- 2022-01-04 · [Vodafone NFT: 3 agences luxembourgeoises dans les coulisses de la vente du premier SMS de l’histoire sous forme de NFT](https://www.adada.lu/2022/01/vodafone-nft-3-agences-luxembourgeoises-dans-les-coulisses-de-la-vente-du-premier-sms-de-lhistoire-sous-forme-de-nft/): adada. The first SMS ever sent, auctioned as an NFT for €107,000 for the UNHCR, animated by Misch Strotz with Gil Galvao (TIJO Studio).
 - 2021-06-07 · [Web 3.0: Wie Kryptowährungen das Internet und die Welt verändern sollen](https://www.tageblatt.lu/Wirtschaft/Wie-Kryptowaehrungen-das-Internet-und-die-Welt-veraendern-sollen-50577.html): Tageblatt. With Sacha Schmitz, on why digital money will change the world.
 - 2020-10-08 · [adada offline, No. 6](https://www.facebook.com/adada.lu/posts/vient-de-para%C3%AEtre-adadaoffline-num%C3%A9ro-6coverstory-rencontre-avec-misch-strotz-et/3488229864554186/): Cover story with Karim Youssef: the founders of neon, chosen by the government to run the first phase of the Covid communication.
 - 2018-12-21 · [Neon, The Marketing And Technology Hybrid Agency](https://www.siliconluxembourg.lu/neon-the-marketing-and-technology-hybrid-agency/): Silicon Luxembourg. With Karim Youssef, on their new venture as neon joins the Business Club.
 
-## Tweets
+## Lore Selection
 
 Stories told on X, newest first. Indented posts followed the first one.
 
 - 2026-09-11 · [I gave the fruit fly brain a fruit fly body and put it into a fruit fly sim. Now you can watch him eat, fly, and shit live on https://www.fruitflysimulator.com](https://x.com/mitch0z/status/2098371958068883964) (754 likes)
 - 2026-08-17 · [AI movies no longer look like AI. Introducing MIRA, a new original AI demo series. Episode 1, made entirely with LetzAI and Seedance 2.5.](https://x.com/mitch0z/status/2089433805220151614) (782 likes)
   - 2026-08-24 · [MAKING OF MIRA](https://x.com/mitch0z/status/2091905048364146988) (2,066 likes)
-- 2025-12-17 · [google won so hard on image gen, it's not even close](https://x.com/mitch0z/status/2001216644195012845) (2,928 likes)
 - 2025-11-24 · [Tried an AI influencer with nano banana today. Thread 🧵👇](https://x.com/mitch0z/status/1993035566959804646) (4,733 likes)
   - 2025-11-27 · [Image](https://x.com/mitch0z/status/1994159184930111722) (7,519 likes)
   - 2025-11-28 · [A girl needs a name](https://x.com/mitch0z/status/1994389566078267827) (1,532 likes)
@@ -96,13 +99,13 @@ Concepts coined by Misch Strotz.
 - 2026 · [MIRA](https://letz.ai/watch/mira): A new original AI series, made entirely with letz.ai and Seedance 2.5. Episode I: a girl is running out of time in her fight against a deadly disease.
 - 2026 · [963](https://x.com/mitch0z/status/2071919240433574250): I put Seedance 4k on letz.ai to the test. If I ever made a movie, it would probably look something like this.
 - 2026 · [invoices69](https://invoices69.com): Sends your invoices, reads your receipts and keeps your VAT straight. Free for freelancers and studios.
-- 2025 · [KI Léierbud](https://ki-leierbud.lu/): Entdeck wat KI ass. Verstéi wéi et funktionéiert. A free platform for learning about AI in five languages, with Marco Barnig and Visual Online. Digital Inclusion Prize 2025.
+- 2025 · [KI Léierbud](https://ki-leierbud.lu/): A free platform for learning about AI in five languages, with Marco Barnig († 2026) and Visual Online. Digital Inclusion Prize 2025.
 - 2025 · [Trounwiessel](https://trounwiessel.letz.ai/): Eng Foto mam Guillaume: a photo shoot with the new Grand Duke for his accession, made with letz.ai. Over 25,000 images generated.
 - 2025 · [XD Network](https://xdnet.work): XD = Unlimited Aesthetical Dimensions. A department for experiments with reality, with room for mistakes. With Sebastian Zimmerhackl.
 - 2025 · [TidyHouse](https://tidyhouse.io): Clean up any real estate image in 10 seconds.
 - 2022 · [We are ze Golemz](https://mirror.xyz/fayeknewz.eth/PjVgzT2Vj0WUMrv3M_PxLhCeeJaPRIFHm8lXoW9b0hc): An entire interactive comic, generated and programmed with AI capabilities that emerged in 2022, powered by 300 unique NFTs.
 - 2021 · [Z4ubershow](https://z4ubershow.com/): Die Suche nach dem Stein der Weisen. A podcast and live show on Twitch and YouTube, whose best moments were minted as NFTs, the Z4ubertricks.
-- 2018 · [NeoAsia 2018/2019](https://www.behance.net/gallery/89914651/neoasia-20182019): A street photography project.
+- 2018 · [NeoAsia 2018/2019](https://www.behance.net/gallery/89914651/neoasia-20182019): Street Photography in Asia.
 
 ## Contact
 

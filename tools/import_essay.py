@@ -377,11 +377,11 @@ def render(slug, meta, blocks):
 </head>
 <body>
   <main class="essay">
-    <nav class="crumb"><a href="../">Misch Strotz</a></nav>
+    <nav class="crumb"><a href="../"><img class="logo logo--ink" src="../assets/img/logo.png" alt="Misch Strotz" width="207" height="50"><img class="logo logo--paper" src="../assets/img/logo-white.png" alt="Misch Strotz" width="207" height="50"></a></nav>
     <header>
       <h1>{html.escape(title)}</h1>
       <p class="dek">{html.escape(dek)}</p>
-      <p class="meta"><time datetime="{date_iso}">{date_iso}</time></p>
+      <p class="meta"><time datetime="{date_iso}">{date_iso[8:10]} {"JAN FEB MAR APR MAY JUN JUL AUG SEP OCT NOV DEC".split()[int(date_iso[5:7]) - 1]} {date_iso[:4]}</time></p>
     </header>
     {cover}
     <article>

@@ -2,11 +2,12 @@
 
 > Co-founder & CEO at letz.ai and neon internet. CTO at habiata. Vice-President at PULSE, the Luxembourg Startup Association. Enabling AI for creative professionals. Writing about tech trends I consider relevant.
 
-Personal site with essays, talks, press, tweets, coined terms and projects.
+Personal site with essays, talks, press, lore (stories told on X), coined terms and projects.
 
 ## Profile
 
 - [Misch Strotz (Markdown)](https://www.mitchoz.com/misch-strotz.md): everything on the site in one file
+- [Press kit](https://www.mitchoz.com/press/): photos, logo, bio and name spellings, free to use for editorial coverage
 
 ## Essays
 

@@ -31,20 +31,49 @@ def section(sid):
     return m.group(1) if m else ""
 
 
+def items(fragment):
+    """The top-level <li> elements of a list, with any nested lists kept inside them."""
+    out, depth, start = [], 0, None
+    for m in re.finditer(r"<(/?)li\b[^>]*>", fragment):
+        if not m.group(1):
+            if depth == 0:
+                start = m.end()
+            depth += 1
+        else:
+            depth -= 1
+            if depth == 0:
+                out.append(fragment[start:m.start()])
+    return out
+
+
+def entry(li):
+    """(date, title, absolute url, description) of one <li>."""
+    # Agents get the ISO date from the datetime attribute; the page shows "01 JUN 2025".
+    when = re.search(r'<time(?: datetime="([^"]*)")?[^>]*>(.*?)</time>', li, re.S)
+    link = re.search(r'<a [^>]*href="([^"]+)"[^>]*>(.*?)</a>', li, re.S)
+    if not link:
+        return None
+    paras = [text(p) for p in re.findall(r"<p>(.*?)</p>", li, re.S)]
+    desc = " ".join(paras)
+    if when and desc.startswith(text(when.group(2))):  # a follow-up's "22 MAY 2026 · ..." line
+        desc = desc[len(text(when.group(2))):].lstrip(" ·")
+    return ((when.group(1) or text(when.group(2))) if when else "", text(link.group(2)), urljoin(SITE, html.unescape(link.group(1))), desc)
+
+
 def entries(fragment):
-    """(date, title, absolute url, description) for each <li> of an entries list."""
+    """(date, title, url, description, follow-ups) for each row; follow-ups are the row's nested links."""
     rows = []
-    for li in re.findall(r"<li\b[^>]*>(.*?)</li>", fragment, re.S):
-        when = re.search(r"<time[^>]*>(.*?)</time>", li, re.S)
-        link = re.search(r'<a [^>]*href="([^"]+)"[^>]*>(.*?)</a>', li, re.S)
-        paras = [text(p) for p in re.findall(r"<p>(.*?)</p>", li, re.S)]
-        if link:
-            rows.append((text(when.group(1)) if when else "", text(link.group(2)), urljoin(SITE, html.unescape(link.group(1))), " ".join(paras)))
+    for li in items(fragment):
+        nested = re.search(r'<ol class="story-posts">(.*)</ol>', li, re.S)
+        main = entry(li[: nested.start()] if nested else li)
+        if main:
+            rows.append((*main, [e for e in map(entry, items(nested.group(1))) if e] if nested else []))
     return rows
 
 
-def bullet(when, title, url, desc):
-    return f"- {when} · [{title}]({url})" + (f": {desc}" if desc else "")
+def bullet(when, title, url, desc, subs=()):
+    line = f"- {when} · [{title}]({url})" + (f": {desc}" if desc else "")
+    return "\n".join([line] + ["  " + bullet(*s) for s in subs])
 
 
 def lists_with_headings(fragment):
@@ -64,6 +93,7 @@ out = [
     f"> {bio}",
     "",
     f"Website: {SITE}  ",
+    f"Press kit (photos, logo, bio): {SITE}press/  ",
     "Elsewhere: " + " · ".join(f"[{t}]({h})" for t, h in links),
     "",
     f"_This file mirrors {SITE} for AI agents and other readers. Updated {date.today().isoformat()}._",
@@ -71,10 +101,15 @@ out = [
 ]
 
 # ---------- Lists ----------
-for sid, heading in [("writing", "Writing"), ("talks", "Talks & podcasts"), ("press", "Press")]:
-    out += [f"## {heading}", "", *[bullet(*row) for row in entries(section(sid))], ""]
+def heading(sid):
+    """The section's heading as shown on the page, so renames carry over."""
+    return text(re.search(r"<h2>(.*?)</h2>", section(sid), re.S).group(1))
 
-# ---------- Tweets (from notes.json: each story starts with how it started) ----------
+
+for sid in ("writing", "talks", "press"):
+    out += [f"## {heading(sid)}","", *[bullet(*row) for row in entries(section(sid))], ""]
+
+# ---------- Lore (from notes.json: stories told on X, each starting with how it started) ----------
 stories = json.loads((ROOT / "notes.json").read_text(encoding="utf-8-sig"))["stories"]
 stories = sorted((s for s in stories if s["posts"] and isinstance(s["posts"][0], dict)), key=lambda s: s["posts"][0]["date"], reverse=True)
 
@@ -85,7 +120,7 @@ def post_line(p, indent=""):
     return f"{indent}- {p['date'][:10]} · [{label}]({p['url']}) ({stats})"
 
 
-out += ["## Tweets", "", "Stories told on X, newest first. Indented posts followed the first one.", ""]
+out += [f"## {heading('lore')}", "", "Stories told on X, newest first. Indented posts followed the first one.", ""]
 for s in stories:
     posts = [p for p in s["posts"] if isinstance(p, dict)]
     out.append(post_line(posts[0]))
@@ -117,15 +152,16 @@ llms = [
     "",
     f"> {bio}",
     "",
-    "Personal site with essays, talks, press, tweets, coined terms and projects.",
+    "Personal site with essays, talks, press, lore (stories told on X), coined terms and projects.",
     "",
     "## Profile",
     "",
     f"- [Misch Strotz (Markdown)]({SITE}misch-strotz.md): everything on the site in one file",
+    f"- [Press kit]({SITE}press/): photos, logo, bio and name spellings, free to use for editorial coverage",
     "",
     "## Essays",
     "",
-    *[f"- [{title}]({url}): {desc}" for _, title, url, desc in essays],
+    *[f"- [{title}]({url}): {desc}" for _, title, url, desc, _ in essays],
     "",
 ]
 (ROOT / "llms.txt").write_text("\n".join(llms), encoding="utf-8-sig", newline="\n")

@@ -74,7 +74,8 @@ p { margin: 0; }
 #notes-list .skeleton .skeleton-sub { font-size: .9rem; }
 /* Follow-ups under a story's first post */
 .story-posts { list-style: none; margin: 10px 0 4px; padding: 0 0 0 14px; border-left: 2px solid var(--rule); }
-.story-posts li { padding: 4px 0; }
+/* Follow-ups sit inside a row, so they don't take the row's date column. */
+.story-posts li { display: block; padding: 4px 0; }
 .story-posts li + li { margin-top: 4px; }
 .story-posts a { font-size: .95rem; }
 .story-posts time { color: inherit; font-size: inherit; padding: 0; }
@@ -132,6 +133,33 @@ footer a { color: inherit; }
 }
 .essay article [id] { scroll-margin-top: 24px; }
 .essay article p:target { background: var(--mark); box-shadow: 0 0 0 8px var(--mark); }
+
+/* Press kit teaser at the end of the homepage: photo in the date column */
+.press-kit { display: grid; grid-template-columns: 6.5rem 1fr; gap: 0 16px; align-items: start; }
+.press-kit img { display: block; width: 100%; height: auto; background: var(--rule); }
+.press-kit p { color: var(--muted); font-size: .9rem; line-height: 1.45; margin-top: 2px; }
+.press-kit p a { color: inherit; }
+@media (max-width: 520px) {
+  .press-kit { grid-template-columns: 5rem 1fr; }
+}
+
+/* Press kit */
+.press .press-photos { display: grid; gap: 12px; margin: 16px 0; }
+.press .press-photos.portrait { grid-template-columns: repeat(3, 1fr); }
+.press .press-photos.landscape { grid-template-columns: repeat(2, 1fr); }
+.press .press-photos figure, .press .press-logos figure { margin: 0; }
+.press .press-photos img { display: block; width: 100%; height: auto; background: var(--rule); }
+.press .press-logos { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 16px 0; }
+.press .swatch { display: grid; place-items: center; aspect-ratio: 2 / 1; border: 1px solid var(--rule); }
+.press .swatch.paper { background: #fff; }
+.press .swatch.ink { background: #000; }
+.press .swatch img { width: 50%; height: auto; }
+.press .names { margin: 0 0 1em; padding-left: 1.2em; }
+.press .names li { margin: 4px 0; }
+@media (max-width: 520px) {
+  .press .press-photos.portrait { grid-template-columns: 1fr 1fr; }
+  .press .press-photos.landscape, .press .press-logos { grid-template-columns: 1fr; }
+}
 
 /* Hover previews */
 .preview {
