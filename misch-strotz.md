@@ -97,7 +97,7 @@ Concepts coined by Misch Strotz.
 
 - 2026 · [Fruit Fly Simulator](https://fruitflysimulator.com): A fruit fly brain in a room. Walking, flying, smelling, eating. All day long.
 - 2026 · [MIRA](https://letz.ai/watch/mira): A new original AI series, made entirely with letz.ai and Seedance 2.5. Episode I: a girl is running out of time in her fight against a deadly disease.
-- 2026 · [963](https://x.com/mitch0z/status/2071919240433574250): I put Seedance 4k on letz.ai to the test. If I ever made a movie, it would probably look something like this.
+- 2026 · [963](https://x.com/mitch0z/status/2071919240433574250): If I ever made a movie, it would probably look something like this.
 - 2026 · [invoices69](https://invoices69.com): Sends your invoices, reads your receipts and keeps your VAT straight. Free for freelancers and studios.
 - 2025 · [KI Léierbud](https://ki-leierbud.lu/): A free platform for learning about AI in five languages, with Marco Barnig († 2026) and Visual Online. Digital Inclusion Prize 2025.
 - 2025 · [Trounwiessel](https://trounwiessel.letz.ai/): Eng Foto mam Guillaume: a photo shoot with the new Grand Duke for his accession, made with letz.ai. Over 25,000 images generated.

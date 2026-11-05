@@ -31,15 +31,13 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@mitch0z">
   <meta name="twitter:creator" content="@mitch0z">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+  <link rel="preload" href="assets/fonts/source-serif-4-latin-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="styles.css">
   <script>
-    // Hold the text back for a moment so app.js can scramble it in; skipped with reduced motion, never longer than 2 s.
+    // Hold the text back for a moment so app.js can scramble it in; skipped with reduced motion, never longer than 1 s.
     if (!matchMedia("(prefers-reduced-motion: reduce)").matches) {
       document.documentElement.classList.add("scramble-wait");
-      setTimeout(() => document.documentElement.classList.remove("scramble-wait"), 2000);
+      setTimeout(() => document.documentElement.classList.remove("scramble-wait"), 1000);
     }
   </script>
   <!-- Every link opens in a new tab. -->
@@ -49,7 +47,7 @@
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Misch Strotz",
-    "url": "https://www.mitchoz.com",
+    "url": "https://www.mitchoz.com/",
     "email": "mailto:misch@msh.lu",
     "jobTitle": "Co-founder & CEO",
     "worksFor": [
@@ -177,7 +175,19 @@
 
     <section id="lore">
       <h2>Lore Selection</h2>
-      <ol class="entries" id="notes-list"></ol>
+      <ol class="entries" id="notes-list">
+        <!-- Built by tools/render_lore.py from notes.json; edit those, not this. -->
+        <li class="story" data-thumb="thumbs/lore/2098371958068883964.webp"><time datetime="2026-09-11">11 SEP 2026</time><div><a target="_blank" rel="noopener" href="https://x.com/mitch0z/status/2098371958068883964">I gave the fruit fly brain a fruit fly body and put it into a fruit fly sim. Now you can watch him eat, fly, and shit live on https://www.fruitflysimulator.com</a><p>754 likes · 21 replies</p></div></li>
+        <li class="story" data-thumb="thumbs/lore/2089433805220151614.webp"><time datetime="2026-08-17">17 AUG 2026</time><div><a target="_blank" rel="noopener" href="https://x.com/mitch0z/status/2089433805220151614">AI movies no longer look like AI. Introducing MIRA, a new original AI demo series. Episode 1, made entirely with LetzAI and Seedance 2.5.</a><p>Quoting <a target="_blank" rel="noopener" href="https://x.com/mitch0z/status/2089066811404730802">Filmmaking is at a crossroads. AI Movies and AI VFX are now basically indistinguishable from traditional films. Yet, modern filmmakers are forced to think in terms of &quot;hooks&quot;, &quot;attention spans&quot;, and &quot;retention rates&quot; to catch audiences. There should be another way.</a></p><p>782 likes · 50 replies</p><ol class="story-posts"><li data-thumb="thumbs/lore/2091905048364146988.webp"><a target="_blank" rel="noopener" href="https://x.com/mitch0z/status/2091905048364146988">MAKING OF MIRA</a><p><time datetime="2026-08-24">24 AUG 2026</time> · 2,066 likes · 44 replies</p></li></ol></div></li>
+        <li class="story" data-thumb="thumbs/lore/1993035566959804646.webp"><time datetime="2025-11-24">24 NOV 2025</time><div><a target="_blank" rel="noopener" href="https://x.com/mitch0z/status/1993035566959804646">Tried an AI influencer with nano banana today. Thread 🧵👇</a><p>4,733 likes · 868 replies</p><ol class="story-posts"><li data-thumb="thumbs/lore/1994159184930111722.webp"><a target="_blank" rel="noopener" href="https://x.com/mitch0z/status/1994159184930111722">Image</a><p><time datetime="2025-11-27">27 NOV 2025</time> · 7,519 likes · 55 replies</p></li><li data-thumb="thumbs/lore/1994389566078267827.webp"><a target="_blank" rel="noopener" href="https://x.com/mitch0z/status/1994389566078267827">A girl needs a name</a><p><time datetime="2025-11-28">28 NOV 2025</time> · 1,532 likes · 25 replies</p></li><li data-thumb="thumbs/lore/1994938960561471568.webp"><a target="_blank" rel="noopener" href="https://x.com/mitch0z/status/1994938960561471568">She can make it to Asmongold, but she can&#x27;t get a name. Pathetic.</a><p>Quoting <a target="_blank" rel="noopener" href="https://x.com/mitch0z/status/1994771989756563842">If she can get 5k likes, I&#x27;ll give her a name. If she makes it to 50k, I&#x27;ll give her IG. If neither, we should probably never speak of her again.</a></p><p><time datetime="2025-11-30">30 NOV 2025</time> · 827 likes · 7 replies</p></li><li data-thumb=""><a target="_blank" rel="noopener" href="https://x.com/mitch0z/status/1994963165705375750">TIL I 3D printed an emo girl</a><p><time datetime="2025-11-30">30 NOV 2025</time> · Only visible on X</p></li><li data-thumb="thumbs/lore/1996276542847029426.webp"><a target="_blank" rel="noopener" href="https://x.com/mitch0z/status/1996276542847029426">Video</a><p><time datetime="2025-12-03">03 DEC 2025</time> · 8,769 likes · 72 replies</p></li></ol></div></li>
+        <li class="story" data-thumb="thumbs/lore/1991611480181977407.webp"><time datetime="2025-11-20">20 NOV 2025</time><div><a target="_blank" rel="noopener" href="https://x.com/mitch0z/status/1991611480181977407">&quot;Generate an image in the style of this moodboard&quot; Solved by nano banana pro</a><p>733 likes · 20 replies</p></div></li>
+        <li class="story" data-thumb="thumbs/lore/1781599717958603216.webp"><time datetime="2024-04-20">20 APR 2024</time><div><a target="_blank" rel="noopener" href="https://x.com/mitch0z/status/1781599717958603216">Name his album</a><p>2,731 likes · 1,748 replies</p></div></li>
+        <li class="story" data-thumb="thumbs/lore/1772757045210484989.webp"><time datetime="2024-03-26">26 MAR 2024</time><div><a target="_blank" rel="noopener" href="https://x.com/mitch0z/status/1772757045210484989">Paid the 100€ for @arcads_ai so you don&#x27;t have to 😬</a><p>1,726 likes · 262 replies</p><ol class="story-posts"><li data-thumb="thumbs/lore/1773123622980210706.webp"><a target="_blank" rel="noopener" href="https://x.com/mitch0z/status/1773123622980210706">She&#x27;s called Ariel and she&#x27;s a real person. You can hire her. She&#x27;s great. She also has Instagram. So show some love🫶 https://www.instagram.com/arielmarie.ugc</a><p><time datetime="2024-03-27">27 MAR 2024</time> · 129 likes · 21 replies</p></li></ol></div></li>
+        <li class="story" data-thumb="thumbs/lore/1724020267419119905.webp"><time datetime="2023-11-13">13 NOV 2023</time><div><a target="_blank" rel="noopener" href="https://x.com/mitch0z/status/1724020267419119905">I invited Luxembourgish Artist Alain Welter to my home &amp; showed him @letz_ai. The resulting video offers a glimpse into a traditional artist&#x27;s first interaction with AI. If you&#x27;re curious about AI, or if it seems daunting to you, this video is for you.</a><p>18 likes · 0 replies</p></div></li>
+        <li class="story" data-thumb="thumbs/lore/1649114630550061057.webp"><time datetime="2023-04-20">20 APR 2023</time><div><a target="_blank" rel="noopener" href="https://x.com/mitch0z/status/1649114630550061057">And remember: AI art is just one click.</a><p>Quoting <a target="_blank" rel="noopener" href="https://x.com/mitch0z/status/1649113170718359569">Thanks to everyone who showed up at the @shibuyaxyz Live Learn today!⚡</a></p><p>86 likes · 7 replies</p></div></li>
+        <li class="story" data-thumb="thumbs/lore/1395709169727115267.webp"><time datetime="2021-05-21">21 MAY 2021</time><div><a target="_blank" rel="noopener" href="https://x.com/mitch0z/status/1395709169727115267">Gas was cheap. Lit the furnace. @muratpak</a><p>124 likes · 8 replies</p></div></li>
+        <!-- /lore -->
+      </ol>
     </section>
 
     <section id="terms">
@@ -204,7 +214,7 @@
       <ol class="entries">
         <li data-thumb="thumbs/fruit-fly-simulator.webp"><time>2026</time><div><a target="_blank" rel="noopener" href="https://fruitflysimulator.com">Fruit Fly Simulator</a><p>A fruit fly brain in a room. Walking, flying, smelling, eating. All day long.</p></div></li>
         <li data-thumb="thumbs/mira.webp"><time>2026</time><div><a target="_blank" rel="noopener" href="https://letz.ai/watch/mira">MIRA</a><p>A new original AI series, made entirely with letz.ai and Seedance 2.5. Episode I: a girl is running out of time in her fight against a deadly disease.</p></div></li>
-        <li data-thumb="thumbs/963.webp"><time>2026</time><div><a target="_blank" rel="noopener" href="https://x.com/mitch0z/status/2071919240433574250">963</a><p>I put Seedance 4k on letz.ai to the test. If I ever made a movie, it would probably look something like this.</p></div></li>
+        <li data-thumb="thumbs/963.webp"><time>2026</time><div><a target="_blank" rel="noopener" href="https://x.com/mitch0z/status/2071919240433574250">963</a><p>If I ever made a movie, it would probably look something like this.</p></div></li>
         <li data-thumb="thumbs/invoices69.webp"><time>2026</time><div><a target="_blank" rel="noopener" href="https://invoices69.com">invoices69</a><p>Sends your invoices, reads your receipts and keeps your VAT straight. Free for freelancers and studios.</p></div></li>
         <li data-thumb="thumbs/ki-leierbud.webp"><time>2025</time><div><a target="_blank" rel="noopener" href="https://ki-leierbud.lu/">KI Léierbud</a><p>A free platform for learning about AI in five languages, with Marco Barnig († 2026) and Visual Online. Digital Inclusion Prize 2025.</p></div></li>
         <li data-thumb="thumbs/trounwiessel.webp"><time>2025</time><div><a target="_blank" rel="noopener" href="https://trounwiessel.letz.ai/">Trounwiessel</a><p>Eng Foto mam Guillaume: a photo shoot with the new Grand Duke for his accession, made with letz.ai. Over 25,000 images generated.</p></div></li>

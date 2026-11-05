@@ -1,0 +1,74 @@
+<!doctype html>
+<!--
+       /     /\      /\      /\
+      /     /  \    /  \    /  \
+     /     /    \  /    \  /    \
+    /     /      \/      \/      \
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Not found · Misch Strotz</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <meta name="theme-color" content="#000000">
+  <link rel="preload" href="/assets/fonts/source-serif-4-latin-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/styles.css">
+  <script>
+    // Hold the text back for a moment so app.js can scramble it in; skipped with reduced motion, never longer than 1 s.
+    if (!matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      document.documentElement.classList.add("scramble-wait");
+      setTimeout(() => document.documentElement.classList.remove("scramble-wait"), 1000);
+    }
+  </script>
+</head>
+<body>
+  <!-- Served for any missing address, so every path here is absolute. -->
+  <main class="essay not-found">
+    <nav class="crumb"><a target="_blank" rel="noopener" href="/"><img class="logo logo--ink" src="/assets/img/logo.png" alt="Misch Strotz" width="207" height="50"><img class="logo logo--paper" src="/assets/img/logo-white.png" alt="Misch Strotz" width="207" height="50"></a></nav>
+
+    <pre class="ascii-404" aria-hidden="true">
+    /|     /\      /|
+   / |    /  \    / |
+  /  |   /    \  /  |
+ /___|_  \    / /___|_
+     |    \  /      |
+     |     \/       |</pre>
+
+    <header>
+      <h1>Nothing here</h1>
+    </header>
+  </main>
+
+  <script>
+    // Every few seconds the 404 glitches: a handful of its strokes flicker into noise and back.
+    (() => {
+      if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+      const art = document.querySelector(".ascii-404");
+      const GLYPHS = "/\\|_<>[]{}#%&*+=?!01";
+      art.dataset.clean = art.textContent; // before app.js scrambles it in
+      const glitch = () => {
+        const clean = art.dataset.clean;
+        const strokes = [...clean].map((c, i) => (c.trim() ? i : -1)).filter((i) => i >= 0);
+        let frames = 6;
+        const tick = setInterval(() => {
+          const out = [...clean];
+          if (frames-- > 0) {
+            for (let n = 0; n < 7; n++) {
+              const i = strokes[Math.floor(Math.random() * strokes.length)];
+              out[i] = GLYPHS[Math.floor(Math.random() * GLYPHS.length)];
+            }
+          }
+          art.textContent = out.join("");
+          if (frames < 0) clearInterval(tick);
+        }, 60);
+      };
+      setTimeout(() => { glitch(); setInterval(glitch, 3500); }, 1600);
+      art.closest("main").addEventListener("pointerenter", glitch);
+    })();
+  </script>
+  <script src="/app.js"></script>
+</body>
+</html>

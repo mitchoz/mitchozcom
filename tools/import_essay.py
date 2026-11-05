@@ -330,8 +330,8 @@ def render(slug, meta, blocks):
     title, dek = meta["title"], meta.get("dek", "")
     ld = {
         "@context": "https://schema.org", "@type": "Article", "headline": title, "description": dek,
-        "datePublished": date_iso, "image": meta.get("cover"), "url": f"https://www.mitchoz.com/{slug}",
-        "author": {"@type": "Person", "name": "Misch Strotz", "url": "https://www.mitchoz.com"},
+        "datePublished": date_iso, "image": meta.get("cover"), "url": f"https://www.mitchoz.com/{slug}/",
+        "author": {"@type": "Person", "name": "Misch Strotz", "url": "https://www.mitchoz.com/"},
     }
     cover = f'<figure class="cover"><img src="{html.escape(meta["cover"])}" alt=""></figure>' if meta.get("cover") else ""
     nl = "\n      "
@@ -361,15 +361,13 @@ def render(slug, meta, blocks):
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@mitch0z">
   <meta name="twitter:creator" content="@mitch0z">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+  <link rel="preload" href="../assets/fonts/source-serif-4-latin-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="../styles.css">
   <script>
-    // Hold the text back for a moment so app.js can scramble it in; skipped with reduced motion, never longer than 2 s.
+    // Hold the text back for a moment so app.js can scramble it in; skipped with reduced motion, never longer than 1 s.
     if (!matchMedia("(prefers-reduced-motion: reduce)").matches) {{
       document.documentElement.classList.add("scramble-wait");
-      setTimeout(() => document.documentElement.classList.remove("scramble-wait"), 2000);
+      setTimeout(() => document.documentElement.classList.remove("scramble-wait"), 1000);
     }}
   </script>
   <base target="_blank">

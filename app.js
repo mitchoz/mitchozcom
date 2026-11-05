@@ -1,4 +1,4 @@
-(async () => {
+(() => {
   // For whoever opens the console. Same drawing as the comment at the top of each page (tools/ascii_logo.txt).
   console.log(
     [
@@ -27,18 +27,6 @@
     }
     return node;
   };
-  const num = new Intl.NumberFormat("en-US");
-  const isoDay = (iso) => iso.slice(0, 10);
-  // "01 JUN 2025": the same in the US and Europe (tools/format_dates.py does this for the static pages).
-  const MONTHS = "JAN FEB MAR APR MAY JUN JUL AUG SEP OCT NOV DEC".split(" ");
-  const dayLabel = (iso) => {
-    const [y, m, d] = isoDay(iso).split("-");
-    return `${d} ${MONTHS[Number(m) - 1]} ${y}`;
-  };
-  // pbs.twimg.com serves resized variants via ?name=
-  const small = (src) => (src.includes("/media/") ? `${src}?name=small` : src);
-  const oneLine = (s) => s.replace(/\s*\n+\s*/g, " ");
-
   /* ---------- ASCII scramble ----------
      On load, all text on the page starts as random ASCII and settles into the real text,
      character by character, in a quick top-to-bottom sweep across the screen. The whole page
@@ -48,7 +36,6 @@
   const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
   const GLYPHS = "/\\|_-=+*#%&@$<>[]{}()?!:;~^abcdefghijklmnopqrstuvwxyz0123456789";
   const glyph = () => GLYPHS[(Math.random() * GLYPHS.length) | 0];
-  const noise = (length) => Array.from({ length }, glyph).join("");
 
   function scrambleIn(root, { duration = 900, sweep = 350 } = {}) {
     if (reduceMotion || !root) return;
@@ -76,13 +63,16 @@
         n.nodeValue = out;
       }
     };
+    // Screen readers skip the noise: the text is hidden from them until it has settled (under a second).
     root.setAttribute("aria-busy", "true");
+    root.setAttribute("aria-hidden", "true");
     render(0);
     const start = performance.now();
     const finish = () => {
       clearInterval(tick);
       items.forEach(({ n, text }) => (n.nodeValue = text));
       root.removeAttribute("aria-busy");
+      root.removeAttribute("aria-hidden");
     };
     // A timer rather than animation frames: frames pause in background tabs and hidden frames,
     // which would leave the text scrambled. ~25 updates a second reads as flicker, not blur.
@@ -96,80 +86,8 @@
   scrambleIn(document.querySelector("main"));
   document.documentElement.classList.remove("scramble-wait");
 
-  /* ---------- Tweets ----------
-     Stories told on X, newest first. Each story's first post is how it started (the header);
-     the posts that followed are listed under it in order. */
-  // Posts X hides from embeds (age-restricted) are hand-written with just a link and date.
-  const stats = (p) => (p.hidden ? "Only visible on X" : `${num.format(p.likes)} likes · ${num.format(p.replies)} replies`);
-  // Image- or video-only posts have no text; name the medium so the link has something to say.
-  const postLink = (p) => {
-    const text = p.text ? oneLine(p.text) : p.hidden ? "Age-restricted post on X" : p.video ? "Video" : "Image";
-    return el("a", { href: p.url, text });
-  };
-  // The hover image for a post (its video frame or first photo); "" for text-only posts.
-  // Every post row gets the attribute, so hovering a text-only follow-up doesn't show the story's image.
-  const thumbOf = (p) => (p.video ? p.video : p.photos?.[0] ? small(p.photos[0]) : "");
-  // Quoting another post in the same story repeats what's already on screen, so skip those.
-  const quoteLine = (p, storyUrls) =>
-    p.quote && !storyUrls.has(p.quote.url)
-      ? el("p", {}, ["Quoting ", el("a", { href: p.quote.url, text: p.quote.text ? oneLine(p.quote.text) : "a post" })])
-      : null;
-
-  function renderStory(story) {
-    const [start, ...followUps] = story.posts;
-    const urls = new Set(story.posts.map((p) => p.url));
-    return el("li", { class: "story", "data-thumb": thumbOf(start) }, [
-      el("time", { datetime: isoDay(start.date), text: dayLabel(start.date) }),
-      el("div", {}, [
-        postLink(start),
-        quoteLine(start, urls),
-        el("p", { text: stats(start) }),
-        followUps.length
-          ? el("ol", { class: "story-posts" }, followUps.map((p) =>
-              el("li", { "data-thumb": thumbOf(p) }, [
-                postLink(p),
-                quoteLine(p, urls),
-                el("p", {}, [el("time", { datetime: isoDay(p.date), text: dayLabel(p.date) }), ` · ${stats(p)}`]),
-              ])))
-          : null,
-      ]),
-    ]);
-  }
-
-  const notesRoot = document.getElementById("notes-list");
-  if (notesRoot) {
-    // Skeleton: placeholder rows of shifting ASCII until the posts arrive.
-    const lines = [[10, 46, 24], [10, 38, 22], [10, 52, 26]];
-    const skeleton = lines.map(([d, a, b]) => {
-      const parts = [el("time", { text: noise(d) }), el("span", { class: "skeleton-line", text: noise(a) }), el("span", { class: "skeleton-sub", text: noise(b) })];
-      return { parts, li: el("li", { class: "skeleton", "aria-hidden": "true" }, [parts[0], el("div", {}, parts.slice(1))]) };
-    });
-    notesRoot.append(...skeleton.map((s) => s.li));
-    notesRoot.setAttribute("aria-busy", "true");
-    const flicker = reduceMotion ? 0 : setInterval(() => {
-      for (const { parts } of skeleton) for (const p of parts) p.textContent = noise(p.textContent.length);
-    }, 70);
-
-    try {
-      // Revalidate every time so newly added posts show up right away (a cheap 304 when unchanged).
-      const { stories } = await (await fetch("notes.json", { cache: "no-cache" })).json();
-      // Links the script hasn't filled in yet are skipped.
-      const shown = stories
-        .map((s) => ({ ...s, posts: s.posts.filter((p) => typeof p === "object" && p.date).sort((a, b) => a.date.localeCompare(b.date)) }))
-        .filter((s) => s.posts.length)
-        .sort((a, b) => b.posts[0].date.localeCompare(a.posts[0].date));
-      clearInterval(flicker);
-      notesRoot.replaceChildren(...shown.map(renderStory));
-      notesRoot.removeAttribute("aria-busy");
-      scrambleIn(notesRoot, { duration: 700, sweep: 250 });
-    } catch (e) {
-      clearInterval(flicker);
-      notesRoot.replaceWith(el("p", { class: "meta", text: "The lore could not be loaded." }));
-    }
-  }
-
   /* ---------- Hover thumbnails ----------
-     Every row with a data-thumb (writing, talks, press, tweets, projects) shows one image that
+     Every row with a data-thumb (writing, talks, press, lore, projects) shows one image that
      follows the mouse, easing toward the cursor on every frame and gliding from one row to the
      next. On touch screens it shows above the finger while it rests on a row, and goes away on
      lift or when the page starts scrolling. An empty data-thumb means "no image for this row". */
@@ -273,16 +191,28 @@
       row ? show(row) : hideThumb();
     }, { passive: true });
 
-    // Preload and decode every thumbnail once the page has loaded, so even the first hover
-    // shows the image instantly.
-    const preload = () => rows.forEach((r) => {
-      if (!r.dataset.thumb) return;
-      const img = new Image();
-      img.src = r.dataset.thumb;
-      img.decode().catch(() => {});
-    });
-    if (document.readyState === "complete") preload();
-    else addEventListener("load", preload, { once: true });
+    // Preload and decode the thumbnails so even the first hover shows its image instantly.
+    // With a mouse: once the page is idle after loading. On touch screens, where most visitors never
+    // hold a finger on a row, nothing is fetched until the first touch.
+    let preloaded = false;
+    const preload = () => {
+      if (preloaded) return;
+      preloaded = true;
+      rows.forEach((r) => {
+        if (!r.dataset.thumb) return;
+        const img = new Image();
+        img.src = r.dataset.thumb;
+        img.decode().catch(() => {});
+      });
+    };
+    if (matchMedia("(hover: hover) and (pointer: fine)").matches) {
+      const idle = window.requestIdleCallback || ((f) => setTimeout(f, 300));
+      const start = () => idle(preload);
+      if (document.readyState === "complete") start();
+      else addEventListener("load", start, { once: true });
+    } else {
+      addEventListener("pointerdown", preload, { once: true, passive: true });
+    }
   }
 
   /* ---------- Term previews ----------
