@@ -4,8 +4,10 @@ see them without running JavaScript. Each post's image is copied into thumbs/lor
 
     python -I tools/render_lore.py
 
-Run it after changing notes.json (e.g. after node tools/notes.mjs). The markup matches what the page
-used to build in the browser: one row per story, follow-ups indented under it.
+Run it after changing notes.json (e.g. after node tools/notes.mjs). One row per story, follow-ups indented
+under it. A story with a "title" shows the title and lists all its posts under it. Posts by other accounts
+start with their @name. Posts from elsewhere (Instagram) are written by hand in notes.json with "source",
+"user", "date", "text", "stats" and "photos".
 """
 import html
 import io
@@ -37,13 +39,25 @@ def day(iso):
     return f'<time datetime="{iso[:10]}">{d} {MONTHS[int(m) - 1]} {y}</time>'
 
 
+ME = "mitch0z"
+
+
 def stats(p):
+    if p.get("stats"):  # hand-written (e.g. Instagram, which only shows rounded counts)
+        return esc(p["stats"])
     return "Only visible on X" if p.get("hidden") else f"{p['likes']:,} likes · {p['replies']:,} replies"
+
+
+def author(p):
+    """"@name: " before posts by other accounts, "@name on Instagram: " for posts outside X; "" for my own."""
+    user = p.get("user") or p["url"].split("/")[3]
+    where = " on Instagram" if p.get("source") == "instagram" else ""
+    return "" if user == ME and not where else f"@{user}{where}: "
 
 
 def link(p):
     text = one_line(p["text"]) if p.get("text") else "Age-restricted post on X" if p.get("hidden") else "Video" if p.get("video") else "Image"
-    return f'<a {A} href="{esc(p["url"])}">{esc(text)}</a>'
+    return f'<a {A} href="{esc(p["url"])}">{esc(author(p) + text)}</a>'
 
 
 def quote(p, story_urls):
@@ -71,11 +85,17 @@ def thumb(p):
     return out.relative_to(ROOT).as_posix()
 
 
-def story_html(posts, indent):
+def story_html(posts, indent, title=None):
     first, *follow = posts
     urls = {p["url"] for p in posts}
-    rows = [f'<li class="story" data-thumb="{thumb(first)}">{day(first["date"])}<div>',
-            link(first) + quote(first, urls) + f"<p>{stats(first)}</p>"]
+    if title:
+        # A titled story: the title leads (linking to the first post) and every post is listed under it.
+        follow = posts
+        rows = [f'<li class="story" data-thumb="{thumb(first)}">{day(first["date"])}<div>',
+                f'<a {A} href="{esc(first["url"])}">{esc(title)}</a>']
+    else:
+        rows = [f'<li class="story" data-thumb="{thumb(first)}">{day(first["date"])}<div>',
+                link(first) + quote(first, urls) + f"<p>{stats(first)}</p>"]
     if follow:
         rows.append('<ol class="story-posts">' + "".join(
             f'<li data-thumb="{thumb(p)}">{link(p)}{quote(p, urls)}<p>{day(p["date"])} · {stats(p)}</p></li>' for p in follow
@@ -89,16 +109,16 @@ shown = []
 for s in stories:
     posts = sorted((p for p in s["posts"] if isinstance(p, dict) and p.get("date")), key=lambda p: p["date"])
     if posts:
-        shown.append(posts)  # links the notes script hasn't filled in yet are skipped
-shown.sort(key=lambda ps: ps[0]["date"], reverse=True)
+        shown.append((posts, s.get("title")))  # links the notes script hasn't filled in yet are skipped
+shown.sort(key=lambda st: st[0][0]["date"], reverse=True)
 
 page_path = ROOT / "index.html"
 page = page_path.read_text(encoding="utf-8")
 m = re.search(re.escape(START) + r"(.*?)(?:" + re.escape(END) + r")?\s*</ol>(?=\s*</section>)", page, re.S)
 assert m, "Lore list not found in index.html"
 indent = "        "
-body = "\n".join(story_html(ps, indent) for ps in shown)
+body = "\n".join(story_html(ps, indent, title) for ps, title in shown)
 new = f"{START}\n        <!-- Built by tools/render_lore.py from notes.json; edit those, not this. -->\n{body}\n        {END}\n      </ol>"
 page = page[: m.start()] + new + page[m.end():]
 page_path.write_text(page, encoding="utf-8", newline="")
-print(f"index.html: {len(shown)} stories, {sum(len(ps) for ps in shown)} posts")
+print(f"index.html: {len(shown)} stories, {sum(len(ps) for ps, _ in shown)} posts")

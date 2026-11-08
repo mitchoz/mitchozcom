@@ -116,13 +116,21 @@ stories = sorted((s for s in stories if s["posts"] and isinstance(s["posts"][0],
 
 def post_line(p, indent=""):
     label = " ".join((p.get("text") or ("Video" if p.get("video") else "Image")).split())
-    stats = "only visible on X" if p.get("hidden") else f"{p['likes']:,} likes"
+    user = p.get("user") or p["url"].split("/")[3]
+    where = " on Instagram" if p.get("source") == "instagram" else ""
+    if user != "mitch0z" or where:
+        label = f"@{user}{where}: {label}"
+    stats = p.get("stats") or ("only visible on X" if p.get("hidden") else f"{p['likes']:,} likes")
     return f"{indent}- {p['date'][:10]} · [{label}]({p['url']}) ({stats})"
 
 
-out += [f"## {heading('lore')}", "", "Stories told on X, newest first. Indented posts followed the first one.", ""]
+out += [f"## {heading('lore')}", "", "Stories told on X (and a few posts by others), newest first. Indented posts followed the first one.", ""]
 for s in stories:
-    posts = [p for p in s["posts"] if isinstance(p, dict)]
+    posts = sorted((p for p in s["posts"] if isinstance(p, dict)), key=lambda p: p["date"])
+    if s.get("title"):  # a titled story: the title, then all its posts
+        out.append(f"- {posts[0]['date'][:10]} · **{s['title']}**")
+        out += [post_line(p, "  ") for p in posts]
+        continue
     out.append(post_line(posts[0]))
     out += [post_line(p, "  ") for p in posts[1:]]
 out.append("")

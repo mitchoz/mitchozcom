@@ -6,7 +6,7 @@ Website: https://www.mitchoz.com/
 Press kit (photos, logo, bio): https://www.mitchoz.com/press/  
 Elsewhere: [GitHub](https://github.com/mitchoz) · [X](https://twitter.com/mitch0z) · [LinkedIn](https://www.linkedin.com/in/mitchoz/) · [Instagram](https://instagram.com/mitchoz) · [Facebook](https://www.facebook.com/mitchoz) · [misch@msh.lu](mailto:misch@msh.lu)
 
-_This file mirrors https://www.mitchoz.com/ for AI agents and other readers. Updated 2026-11-05._
+_This file mirrors https://www.mitchoz.com/ for AI agents and other readers. Updated 2026-11-08._
 
 ## Writing
 
@@ -57,7 +57,7 @@ _This file mirrors https://www.mitchoz.com/ for AI agents and other readers. Upd
 
 ## Lore Selection
 
-Stories told on X, newest first. Indented posts followed the first one.
+Stories told on X (and a few posts by others), newest first. Indented posts followed the first one.
 
 - 2026-09-11 · [I gave the fruit fly brain a fruit fly body and put it into a fruit fly sim. Now you can watch him eat, fly, and shit live on https://www.fruitflysimulator.com](https://x.com/mitch0z/status/2098371958068883964) (754 likes)
 - 2026-08-17 · [AI movies no longer look like AI. Introducing MIRA, a new original AI demo series. Episode 1, made entirely with LetzAI and Seedance 2.5.](https://x.com/mitch0z/status/2089433805220151614) (782 likes)
@@ -72,6 +72,16 @@ Stories told on X, newest first. Indented posts followed the first one.
 - 2024-04-20 · [Name his album](https://x.com/mitch0z/status/1781599717958603216) (2,731 likes)
 - 2024-03-26 · [Paid the 100€ for @arcads_ai so you don't have to 😬](https://x.com/mitch0z/status/1772757045210484989) (1,726 likes)
   - 2024-03-27 · [She's called Ariel and she's a real person. You can hire her. She's great. She also has Instagram. So show some love🫶 https://www.instagram.com/arielmarie.ugc](https://x.com/mitch0z/status/1773123622980210706) (129 likes)
+- 2023-12-11 · **Invented @Model Tagging and Solved Virtual Try-On with LetzAI in 2023/2024**
+  - 2023-12-11 · [I've coded a new Explore page for @letz_ai: You can now browse all the existing public models by going to https://letz.ai/explore Funny to see that my own model has surpassed the Grand Duke and is now the third most popular on the platform, closely followed by Santa Claus 👀](https://x.com/mitch0z/status/1734252669277978730) (9 likes)
+  - 2024-02-18 · [Made with @letz_ai V2 🫡 Will give first early access tomorrow to trusted friends and V1 users with > 1000 images. Prompt here for logged-in users: https://letz.ai/image/4ccfddb7-d0e7-407a-bb9b-6d0b604bdd03](https://x.com/mitch0z/status/1759317453820043520) (87 likes)
+  - 2024-08-14 · [@rpn on Instagram: Let me teach you how to create a cinematic video featuring YOU as the main character with AI. It’s actually a fairly simple process.](https://www.instagram.com/reel/C-q9z3YNqx7/) (25K likes · 2,795 comments)
+  - 2024-08-14 · [@LinusEkenstam: This is wild. Virtual try-on will change e-commerce for ever. All these images are 100% AI This is how:](https://x.com/LinusEkenstam/status/1823815025083199867) (1,356 likes)
+  - 2024-08-15 · [HEY @SLOGGI I THINK YOU'LL WANT TO SEE THIS Made with @letz_ai V3](https://x.com/mitch0z/status/1824023220829216858) (116 likes)
+  - 2024-08-15 · [@LinusEkenstam: This is wild 💥 Virtual try-on part 2, left is real right is 100% AI This will change e-commerce for ever:](https://x.com/LinusEkenstam/status/1824069856540680267) (992 likes)
+  - 2025-02-04 · [@ai_artworkgen: --> Inpainting: Adding Custom Models with LetzAI I have been testing LetzAI's new inpainting feature, embedding custom models in my images. It is insanely accurate and such a great use case. Let's look at some examples, and the steps I took to make it happen!](https://x.com/ai_artworkgen/status/1886766403224539364) (81 likes)
+  - 2025-02-04 · [We've solved Virtual Try-On, again. When we launched LetzAI V3 in September last year, people went crazy over its fashion-related use cases. But there was a problem: "Generate any person wearing any outfit" worked well for some use cases, but not for all of them. Our new](https://x.com/mitch0z/status/1886799254452113516) (46 likes)
+  - 2025-02-06 · [I want to do a Virtual Try-On comparison post. Which other AI platforms can do this?](https://x.com/mitch0z/status/1887420825269076449) (27 likes)
 - 2023-11-13 · [I invited Luxembourgish Artist Alain Welter to my home & showed him @letz_ai. The resulting video offers a glimpse into a traditional artist's first interaction with AI. If you're curious about AI, or if it seems daunting to you, this video is for you.](https://x.com/mitch0z/status/1724020267419119905) (18 likes)
 - 2023-04-20 · [And remember: AI art is just one click.](https://x.com/mitch0z/status/1649114630550061057) (86 likes)
 - 2021-05-21 · [Gas was cheap. Lit the furnace. @muratpak](https://x.com/mitch0z/status/1395709169727115267) (124 likes)

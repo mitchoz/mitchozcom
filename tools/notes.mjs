@@ -6,6 +6,7 @@
   the rest are what followed:
     { "stories": [
         { "posts": ["https://x.com/mitch0z/status/1993035566959804646", "...follow-up link..."] },
+        { "title": "Optional heading for the story", "posts": ["..."] },
         ...
     ] }
 
@@ -78,7 +79,8 @@ async function fill(entry) {
   const id = idOf(entry);
   if (!id) { console.warn(`  ? can't read a post ID from ${JSON.stringify(entry)}`); return entry; }
   // Hand-written entries for posts X hides ("hidden": true) can't be fetched, so leave them as written.
-  if (typeof entry === "object" && (!refresh || entry.hidden)) return entry;
+  // Same for posts from elsewhere ("source": "instagram"), which X can't fetch.
+  if (typeof entry === "object" && (!refresh || entry.hidden || entry.source)) return entry;
   try {
     const post = toPost(await fetchPost(id));
     fetched++;
