@@ -115,6 +115,7 @@ footer a { color: inherit; }
 .essay header h1 { font-size: 2rem; margin-top: 28px; }
 .essay .dek { margin-top: 6px; font-size: 1.15rem; color: var(--muted); font-style: italic; }
 .essay header .meta { display: block; margin-top: 10px; }
+.essay header + article { margin-top: 28px; }
 .essay figure { margin: 28px 0; }
 .essay figure img { display: block; width: 100%; height: auto; }
 .essay figcaption { margin-top: 6px; color: var(--muted); font-size: .8rem; }

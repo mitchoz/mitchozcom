@@ -377,7 +377,7 @@ def render(slug, meta, blocks):
 </head>
 <body>
   <main class="essay">
-    <nav class="crumb"><a href="../"><img class="logo logo--ink" src="../assets/img/logo.png" alt="Misch Strotz" width="207" height="50"><img class="logo logo--paper" src="../assets/img/logo-white.png" alt="Misch Strotz" width="207" height="50"></a></nav>
+    <nav class="crumb"><a target="_self" href="../"><img class="logo logo--ink" src="../assets/img/logo.png" alt="Misch Strotz" width="207" height="50"><img class="logo logo--paper" src="../assets/img/logo-white.png" alt="Misch Strotz" width="207" height="50"></a></nav>
     <header>
       <h1>{html.escape(title)}</h1>
       <p class="dek">{html.escape(dek)}</p>

@@ -10,6 +10,7 @@ _This file mirrors https://www.mitchoz.com/ for AI agents and other readers. Upd
 
 ## Writing
 
+- 2026-11-21 · [On solving the Riemann hypothesis.](https://www.mitchoz.com/onsolvingtheriemannhypothesis/): Creativity starts once you produce more than you consume.
 - 2025-12-11 · [Why we love what we create](https://www.mitchoz.com/whywelovewhatwecreate/): Meditations on AI Characters and the new Identity Economy. Introducing the Mirror Rejection Effect.
 - 2025-06-01 · [Reflections on Jobs&AI](https://www.mitchoz.com/jobsandai/): The future of work won't look like work. And that's the point.
 - 2025-01-16 · [TNS – Token Name System](https://www.mitchoz.com/tokennamesystem/): An AI protocol layer for controlling intellectual property and AI models.

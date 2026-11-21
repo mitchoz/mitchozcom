@@ -11,6 +11,7 @@ Personal site with essays, talks, press, lore (stories told on X), coined terms 
 
 ## Essays
 
+- [On solving the Riemann hypothesis.](https://www.mitchoz.com/onsolvingtheriemannhypothesis/): Creativity starts once you produce more than you consume.
 - [Why we love what we create](https://www.mitchoz.com/whywelovewhatwecreate/): Meditations on AI Characters and the new Identity Economy. Introducing the Mirror Rejection Effect.
 - [Reflections on Jobs&AI](https://www.mitchoz.com/jobsandai/): The future of work won't look like work. And that's the point.
 - [TNS – Token Name System](https://www.mitchoz.com/tokennamesystem/): An AI protocol layer for controlling intellectual property and AI models.
