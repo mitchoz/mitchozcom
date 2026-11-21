@@ -6,7 +6,7 @@ Website: https://www.mitchoz.com/
 Press kit (photos, logo, bio): https://www.mitchoz.com/press/  
 Elsewhere: [GitHub](https://github.com/mitchoz) · [X](https://twitter.com/mitch0z) · [LinkedIn](https://www.linkedin.com/in/mitchoz/) · [Instagram](https://instagram.com/mitchoz) · [Facebook](https://www.facebook.com/mitchoz) · [misch@msh.lu](mailto:misch@msh.lu)
 
-_This file mirrors https://www.mitchoz.com/ for AI agents and other readers. Updated 2026-11-08._
+_This file mirrors https://www.mitchoz.com/ for AI agents and other readers. Updated 2026-11-21._
 
 ## Writing
 
@@ -59,6 +59,7 @@ _This file mirrors https://www.mitchoz.com/ for AI agents and other readers. Upd
 
 Stories told on X (and a few posts by others), newest first. Indented posts followed the first one.
 
+- 2026-11-16 · [Komorebi 木漏れ日](https://x.com/mitch0z/status/2122393712911142920) (17 likes)
 - 2026-09-11 · [I gave the fruit fly brain a fruit fly body and put it into a fruit fly sim. Now you can watch him eat, fly, and shit live on https://www.fruitflysimulator.com](https://x.com/mitch0z/status/2098371958068883964) (754 likes)
 - 2026-08-17 · [AI movies no longer look like AI. Introducing MIRA, a new original AI demo series. Episode 1, made entirely with LetzAI and Seedance 2.5.](https://x.com/mitch0z/status/2089433805220151614) (782 likes)
   - 2026-08-24 · [MAKING OF MIRA](https://x.com/mitch0z/status/2091905048364146988) (2,066 likes)
